@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma - XV Años</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <main class="portada" id="portada">
+        <img src="img/portada.png" alt="Sobre de invitación de Emma">
+
+        <div class="abrir">
+            TOCAR PARA ABRIR
+        </div>
+    </main>
+
+
+    <!-- =========================
+         SEGUNDA PANTALLA
+    ========================== -->
+
+    <section class="invitacion" id="segundaPantalla">
+
+        <div class="carta">
+
+            <img src="img/carta.png" alt="Sobre abierto con carta">
+
+            <div class="texto-carta">
+
+                <p class="titulo">ESTÁS INVITADO</p>
+
+                <h1>EMMA</h1>
+
+                <h2>XV AÑOS</h2>
+
+                <p class="fecha">05 DE DICIEMBRE 2026</p>
+
+                <p class="frase">LA CUENTA REGRESIVA COMIENZA</p>
+
+                <!-- CUENTA REGRESIVA -->
+                <div class="cuenta-regresiva">
+                    <span id="dias">0</span>
+                    <small>DÍAS</small>
+                </div>
+
+            </div>
+
+            <div class="continuar">
+                TOCA PARA CONTINUAR
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PANTALLA FINAL
+    ========================== -->
+
+    <section class="final" id="pantallaFinal">
+
+        <div class="contenido-final">
+
+            <img src="img/final.png" alt="Diseño final de la invitación">
+
+            <div class="texto-final">
+
+                <p>ONE NIGHT.</p>
+                <p>ONE MEMORY.</p>
+                <p>ONE FIFTEENTH.</p>
+
+                <button id="confirmar">
+                    CONFIRMAR ASISTENCIA
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FORMULARIO
+        ========================== -->
+
+        <div class="formulario" id="formulario">
+
+            <div class="formulario-contenido">
+
+                <button class="cerrar-formulario" id="cerrarFormulario">
+                    ×
+                </button>
+
+                <h2>CONFIRMAR ASISTENCIA</h2>
+
+                <label for="nombre">
+                    NOMBRE Y APELLIDO
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Escribí tu nombre"
+                    autocomplete="name"
+                >
+
+                <p class="pregunta">
+                    ¿VAS A ASISTIR?
+                </p>
+
+                <div class="opciones">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="asistencia"
+                            value="SI"
+                        >
+                        <span>SÍ</span>
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="asistencia"
+                            value="NO"
+                        >
+                        <span>NO</span>
+                    </label>
+
+                </div>
+
+                <button id="enviarConfirmacion">
+                    CONFIRMAR
+                </button>
+
+                <p
+                    class="mensaje-confirmacion"
+                    id="mensajeConfirmacion"
+                ></p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
