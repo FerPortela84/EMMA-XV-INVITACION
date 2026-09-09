@@ -176,6 +176,7 @@ Asistencia: ${
 
     /* Abrir WhatsApp */
     window.open(urlWhatsApp, "_blank");
+    alert("WHATSAPP - versión nueva");
 
     /* Mensaje en la invitación */
     mensajeConfirmacion.textContent =
