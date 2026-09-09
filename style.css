@@ -612,6 +612,10 @@ body {
     .cuenta-regresiva small {
         font-size: 2.8vw;
     }
+    .cuenta-regresiva {
+    position: relative;
+    top: -30px;
+    }
 
     .texto-final p {
         font-size: 4.5vw;
