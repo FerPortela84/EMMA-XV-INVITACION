@@ -1,0 +1,651 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #f1e7d5;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    cursor: pointer;
+}
+
+.portada img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    opacity: 0;
+
+    animation:
+        aparecer 1.2s ease-in-out forwards;
+}
+
+.abrir {
+    position: absolute;
+
+    bottom: 8%;
+
+    background: transparent;
+    border: none;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    color: #4a4038;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    animation:
+        aparecer 1.2s ease-in-out forwards,
+        respirar 2s ease-in-out 1.2s infinite;
+}
+
+.portada.cerrar {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   SEGUNDA PANTALLA
+========================= */
+
+.invitacion {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #f1e7d5;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.invitacion.mostrar {
+    display: flex;
+
+    animation:
+        aparecerCarta 1s ease forwards;
+}
+
+.invitacion.salir {
+    animation:
+        desaparecerCarta 0.7s ease forwards;
+}
+
+.carta {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.carta img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.texto-carta {
+    position: absolute;
+    top: 13%;
+    left: 51.5%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 18px;
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+    position: relative;
+    top: 50px;
+}
+
+.carta h1 {
+    font-family: "Italianno", cursive;
+    font-size: 150px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 3;
+    margin-bottom: 20px;
+}
+
+.carta h2 {
+    font-size: 30px;
+    letter-spacing: 6px;
+
+    font-weight: normal;
+
+    margin-bottom: 40px;
+}
+
+.fecha {
+    font-size: 17px;
+    letter-spacing: 1px;
+
+    margin-bottom: 30px;
+}
+
+.frase {
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
+.cuenta-regresiva {
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    color: #4a4038;
+
+    position: relative;
+    z-index: 2;
+}
+
+.cuenta-regresiva span {
+    font-size: 38px;
+
+    line-height: 1;
+
+    letter-spacing: 3px;
+
+    font-weight: normal;
+}
+
+.cuenta-regresiva small {
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+.continuar {
+    position: absolute;
+
+    bottom: 6%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: transparent;
+    border: none;
+
+    color: #4a4038;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    animation:
+        respirar 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   PANTALLA FINAL
+========================= */
+
+.final {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #111111;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    opacity: 0;
+}
+
+.final.mostrar-final {
+    display: flex;
+
+    animation:
+        aparecerFinal 1s ease forwards;
+}
+
+.contenido-final {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.contenido-final img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.texto-final {
+    position: absolute;
+
+    top: 20%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 80%;
+}
+
+.texto-final p {
+    font-size: 20px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+    color: #b89455;
+}
+
+
+/* =========================
+   BOTÓN CONFIRMAR
+========================= */
+
+#confirmar {
+    margin-top: 50px;
+
+    padding: 14px 28px;
+
+    background: transparent;
+
+    border: 1px solid white;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.formulario {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background: rgba(17, 17, 17, 0.92);
+}
+
+.formulario.mostrar-formulario {
+    display: flex;
+
+    animation:
+        aparecer 0.4s ease forwards;
+}
+
+.formulario-contenido {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 40px 30px;
+
+    background: #f1e7d5;
+
+    text-align: center;
+
+    color: #4a4038;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.formulario-contenido h2 {
+    font-size: 22px;
+
+    letter-spacing: 3px;
+
+    font-weight: normal;
+
+    margin-bottom: 35px;
+}
+
+.cerrar-formulario {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    background: transparent;
+
+    border: none;
+
+    font-size: 30px;
+
+    color: #4a4038;
+
+    cursor: pointer;
+}
+
+.formulario-contenido label {
+    display: block;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+#nombre {
+    width: 100%;
+
+    padding: 12px;
+
+    background: transparent;
+
+    border: none;
+    border-bottom: 1px solid #8d8175;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    color: #4a4038;
+
+    margin-bottom: 30px;
+}
+
+#nombre::placeholder {
+    color: #8d8175;
+}
+
+.pregunta {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.opciones {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    margin-bottom: 30px;
+}
+
+.opciones label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+}
+
+.opciones input {
+    accent-color: #4a4038;
+}
+
+#enviarConfirmacion {
+    padding: 13px 30px;
+
+    background: #4a4038;
+
+    border: none;
+
+    color: #f1e7d5;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+.mensaje-confirmacion {
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes respirar {
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes aparecerCarta {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecerFinal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes desaparecerCarta {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+
+
+    .portada img,
+    .carta img,
+    .contenido-final img {
+        width: 100%;
+        height: auto;
+    }
+
+    .carta,
+    .contenido-final {
+        max-width: none;
+    }
+
+    .carta h1 {
+        font-size: 13vw;
+    }
+
+    .carta h2 {
+        font-size: 6.5vw;
+    }
+
+    .titulo {
+        font-size: 4.5vw;
+    }
+
+    .fecha {
+        font-size: 4.3vw;
+    }
+
+    .frase {
+        font-size: 4vw;
+    }
+
+    .cuenta-regresiva span {
+        font-size: 9vw;
+    }
+
+    .cuenta-regresiva small {
+        font-size: 2.8vw;
+    }
+
+    .texto-final p {
+        font-size: 4.5vw;
+    }
+
+    #confirmar {
+        font-size: 3.5vw;
+        padding: 12px 20px;
+    }
+
+    .formulario-contenido {
+        padding: 35px 22px;
+    }
+
+    .formulario-contenido h2 {
+        font-size: 5vw;
+    }
+}
+
+
+/* =========================
+   TRANSICIÓN ENTRE PANTALLAS
+========================= */
+
+.portada,
+.invitacion,
+.final {
+    min-height: 100vh;
+
+    scroll-snap-align: start;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+}
+
+
