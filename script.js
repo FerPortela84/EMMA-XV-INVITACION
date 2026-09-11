@@ -140,14 +140,12 @@ enviarConfirmacion.addEventListener("click", function () {
             'input[name="asistencia"]:checked'
         );
 
-    /* Verificar nombre */
     if (nombreIngresado === "") {
         mensajeConfirmacion.textContent =
             "Por favor, escribí tu nombre y apellido.";
         return;
     }
 
-    /* Verificar asistencia */
     if (!asistenciaSeleccionada) {
         mensajeConfirmacion.textContent =
             "Por favor, indicá si vas a asistir.";
@@ -156,7 +154,6 @@ enviarConfirmacion.addEventListener("click", function () {
 
     const respuesta = asistenciaSeleccionada.value;
 
-    /* Mensaje para WhatsApp */
     const mensaje =
         `💌 CONFIRMACIÓN XV EMMA
 
@@ -167,18 +164,13 @@ Asistencia: ${
                 : "NO voy a asistir"
         }`;
 
-    /* Número de WhatsApp */
     const numeroWhatsApp = "5491166538574";
 
-    /* Crear enlace */
     const urlWhatsApp =
         `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
 
-    /* Abrir WhatsApp */
     window.open(urlWhatsApp, "_blank");
-    alert("WHATSAPP - versión nueva");
 
-    /* Mensaje en la invitación */
     mensajeConfirmacion.textContent =
         "¡Gracias! Se abrirá WhatsApp para enviar tu confirmación. ❤️";
 });
